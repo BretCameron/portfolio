@@ -37,14 +37,15 @@ const Bio = () => {
     <div
       style={{
         // background: `black`,
-        // color: `white`
+        // color: `white`,
+        minHeight: `100vh`
       }}
     >
       <h1
         id="about"
         style={{
           textAlign: `left`,
-          paddingTop: 20,
+          padding: `40px 0`,
         }}
       >
         About Me
@@ -76,7 +77,7 @@ const Bio = () => {
         />
         <div
           style={{
-            marginTop: 40,
+            marginTop: `20vh`,
             textAlign: `left`
           }}
         >

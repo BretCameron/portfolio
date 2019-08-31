@@ -19,8 +19,8 @@ class Layout extends React.Component {
             query HeroQuery {
               background: file(absolutePath: { regex: "/background.png/" }) {
                 childImageSharp {
-                 fluid(maxWidth: 2160) {
-                   ...GatsbyImageSharpFluid
+                 fluid(maxWidth: 2160, traceSVG: {color: "#111111"}) {
+                   ...GatsbyImageSharpFluid_withWebp_tracedSVG 
                  }
                 }
               }
@@ -39,7 +39,8 @@ class Layout extends React.Component {
                   height: `calc(95vh - 60px)`,
                   minHeight: `600px`,
                   textAlign: `center`,
-                  backgroundPosition: `bottom`
+                  backgroundPosition: `bottom`,
+                  imageRendering: `crisp-edges`
                 }}
               >
                 <div style={{
@@ -83,7 +84,12 @@ class Layout extends React.Component {
                   </Container>
                   <Container>
                     <Link to="/#about">
-                      <svg style={{ boxShadow: `none`, transform: `rotate(90deg) scaley(2)`, cursor: `pointer`, marginLeft: `0px` }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
+                      <svg style={{
+                        boxShadow: `none`,
+                        transform: `rotate(90deg) scaley(5)`,
+                        cursor: `pointer`,
+                        marginLeft: `0px`
+                      }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
                     </Link>
                   </Container>
                 </div>

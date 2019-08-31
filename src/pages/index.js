@@ -45,8 +45,7 @@ class BlogIndex extends React.Component {
             <h1
               id="projects"
               style={{
-                paddingTop: 20,
-                paddingBottom: 20,
+                padding: `40px 0 20px 0`,
                 textAlign: `left`
               }}
             >
@@ -97,12 +96,12 @@ class BlogIndex extends React.Component {
                           justifyContent: `left`,
                           alignItems: `center`
                         }}>
-                          <h4 style={{
+                          <h3 style={{
                             margin: `20px 10px 10px 0`
 
                           }}>
                             {node.frontmatter.title}
-                          </h4>
+                          </h3>
                           <h4 style={{
                             margin: `20px 0 10px 0`,
                             fontSize: `0.8rem`,
@@ -141,7 +140,7 @@ class BlogIndex extends React.Component {
             <h1
               id="blog"
               style={{
-                paddingTop: 20,
+                padding: `40px 0 20px 0`,
                 textAlign: `left`
               }}
             >
