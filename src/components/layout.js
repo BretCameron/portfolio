@@ -2,9 +2,12 @@ import React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
+import Fade from 'react-reveal/Fade';
+import { Parallax } from 'react-scroll-parallax'
 import Container from "../components/container"
 import NavBar from "../components/navbar"
 import { rhythm, scale } from "../utils/typography"
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 class Layout extends React.Component {
   render() {
@@ -35,6 +38,7 @@ class Layout extends React.Component {
                 backgroundColor={`#FFFFFF`}
                 style={{
                   // background: `#FFF`,
+                  backgroundAttachment: `fixed`,
                   color: `white`,
                   height: `calc(95vh - 60px)`,
                   minHeight: `600px`,
@@ -48,52 +52,67 @@ class Layout extends React.Component {
                   height: `calc(95vh - 60px)`,
                   minHeight: `600px`,
                 }}>
-                  <Container>
-                    <div style={{ width: `100%` }}>
-                      <h1
-                        style={{
-                          ...scale(1.5),
-                          marginBottom: rhythm(1.5),
-                          marginTop: "220px",
-                          textAlign: `center`
-                        }}
-                      >
-                        <Link
+                  <Fade>
+                    <Container>
+                      <div style={{ width: `100%` }}>
+                        <h1
                           style={{
-                            boxShadow: `none`,
-                            textDecoration: `none`,
-                            color: `inherit`,
+                            ...scale(1.5),
+                            marginBottom: rhythm(1.5),
+                            marginTop: "220px",
+                            textAlign: `center`
                           }}
-                          to={`/`}
                         >
-                          {title}
+                          <Link
+                            style={{
+                              boxShadow: `none`,
+                              textDecoration: `none`,
+                              color: `inherit`,
+                            }}
+                            to={`/`}
+                          >
+                            {title}
+                          </Link>
+                        </h1>
+                        <h2
+                          style={{
+                            marginTop: 0,
+                            marginBottom: 150,
+                            textAlign: `center`,
+                            fontWeight: 100,
+                            backgroundPosition: '69% 0%'
+                          }}
+                        >
+                          {description}
+                        </h2>
+                      </div>
+                    </Container>
+                  </Fade>
+                  <Parallax y={[0, 100]} tagOuter="figure">
+                    <Container>
+                      <Fade bottom>
+                        <Link to="/#about">
+                          <svg style={{
+                            boxShadow: `none`,
+                            transform: `rotate(90deg)`,
+                            cursor: `pointer`,
+                            marginLeft: `0px`
+                          }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
                         </Link>
-                      </h1>
-                      <h2
-                        style={{
-                          marginTop: 0,
-                          marginBottom: 150,
-                          textAlign: `center`,
-                          fontWeight: 100,
-                          backgroundPosition: '69% 0%'
-                        }}
-                      >
-                        {description}
-                      </h2>
-                    </div>
-                  </Container>
-                  <Container>
-                    <Link to="/#about">
-                      <svg style={{
-                        boxShadow: `none`,
-                        transform: `rotate(90deg) scaley(5)`,
-                        cursor: `pointer`,
-                        marginLeft: `0px`
-                      }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
-                    </Link>
-                  </Container>
+                      </Fade>
+                    </Container>
+                  </Parallax>
                 </div>
               </BackgroundImage>
+              <img src={require('../../content/assets/triangles.svg')} alt="" style={{
+                position: `absolute`,
+                width: `101vw`,
+                overflow: `hidden`,
+                right: `0px`,
+                bottom: `0px`,
+                pointerEvents: `none`,
+                imageRendering: `crisp-edges`
+              }} />
             </>
           )}
         />
@@ -123,15 +142,17 @@ class Layout extends React.Component {
     }
     return (
       <>
-        <NavBar />
-        <header>{header}</header>
-        <main>{children}</main>
-        <Container>
-          <footer>
-            <hr width="100" />
-            © {new Date().getFullYear()}
-          </footer>
-        </Container>
+        <ParallaxProvider>
+          <NavBar />
+          <header>{header}</header>
+          <main>{children}</main>
+          <Container>
+            <footer>
+              <hr width="100" />
+              © {new Date().getFullYear()}
+            </footer>
+          </Container>
+        </ParallaxProvider>
       </>
     )
   }

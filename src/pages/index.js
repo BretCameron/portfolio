@@ -9,6 +9,9 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
+import Zoom from 'react-reveal/Zoom';
+import Fade from 'react-reveal/Fade';
+
 class BlogIndex extends React.Component {
   render() {
     const { data } = this.props
@@ -61,72 +64,74 @@ class BlogIndex extends React.Component {
           >
             {projects.map(({ node }) => {
               return (
-                <div
-                  key={node.fields.slug}
-                  style={{
-                    // border: `1px solid #000000BB`,
-                    // padding: 20,
-                    // boxShadow: `-8px 8px 0 0 #000000BB`
-                  }}
-                >
-                  {node.frontmatter.featuredImage ? <Image
-                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                    style={{
-                      boxShadow: `-2px 2px 5px 2px #00000033`
-                    }}
-                  /> : ''}
+                <Zoom>
                   <div
+                    key={node.fields.slug}
                     style={{
-                      padding: 10,
-                      display: `grid`,
-                      gridTemplateColumns: `25px auto 25px`
+                      // border: `1px solid #000000BB`,
+                      // padding: 20,
+                      // boxShadow: `-8px 8px 0 0 #000000BB`
                     }}
                   >
-                    <div>
-                      <div style={{
-                        margin: `10px 0 10px 0`,
-                        borderLeft: `1px solid lightgrey`,
-                        height: `160px`
-                      }} />
-                    </div>
-                    <div>
-                      <a target="_blank" href={node.frontmatter.link}>
+                    {node.frontmatter.featuredImage ? <Image
+                      fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                      style={{
+                        boxShadow: `-2px 2px 5px 2px #00000033`
+                      }}
+                    /> : ''}
+                    <div
+                      style={{
+                        padding: 10,
+                        display: `grid`,
+                        gridTemplateColumns: `25px auto 25px`
+                      }}
+                    >
+                      <div>
                         <div style={{
-                          display: `flex`,
-                          justifyContent: `left`,
-                          alignItems: `center`
-                        }}>
-                          <h3 style={{
-                            margin: `20px 10px 10px 0`
+                          margin: `10px 0 10px 0`,
+                          borderLeft: `1px solid lightgrey`,
+                          height: `160px`
+                        }} />
+                      </div>
+                      <div>
+                        <a target="_blank" href={node.frontmatter.link}>
+                          <div style={{
+                            display: `flex`,
+                            justifyContent: `left`,
+                            alignItems: `center`
+                          }}>
+                            <h3 style={{
+                              margin: `20px 10px 10px 0`
 
-                          }}>
-                            {node.frontmatter.title}
-                          </h3>
-                          <h4 style={{
-                            margin: `20px 0 10px 0`,
-                            fontSize: `0.8rem`,
-                            color: `#333`
-                          }}>
-                            {node.frontmatter.draft ? '(Draft)' : ''}
-                          </h4>
-                        </div>
-                      </a>
-                      <p>
-                        <em><strong>Tech: </strong>{node.frontmatter.tech}</em>
-                      </p>
-                      <p>
-                        {node.frontmatter.description}
-                      </p>
-                    </div>
-                    <div>
-                      <div style={{
-                        margin: `10px 0 10px 0`,
-                        borderRight: `1px solid lightgrey`,
-                        height: `160px`
-                      }} />
+                            }}>
+                              {node.frontmatter.title}
+                            </h3>
+                            <h4 style={{
+                              margin: `20px 0 10px 0`,
+                              fontSize: `0.8rem`,
+                              color: `#333`
+                            }}>
+                              {node.frontmatter.draft ? '(Draft)' : ''}
+                            </h4>
+                          </div>
+                        </a>
+                        <p>
+                          <em><strong>Tech: </strong>{node.frontmatter.tech}</em>
+                        </p>
+                        <p>
+                          {node.frontmatter.description}
+                        </p>
+                      </div>
+                      <div>
+                        <div style={{
+                          margin: `10px 0 10px 0`,
+                          borderRight: `1px solid lightgrey`,
+                          height: `160px`
+                        }} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Zoom>
               )
             })}
           </div>
@@ -150,27 +155,29 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <article key={node.fields.slug}>
-                <header>
-                  <h3
-                    style={{
-                      marginBottom: rhythm(1 / 4),
-                    }}
-                  >
-                    <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
-                      {title}
-                    </Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
-                </section>
-              </article>
+              <Fade>
+                <article key={node.fields.slug}>
+                  <header>
+                    <h3
+                      style={{
+                        marginBottom: rhythm(1 / 4),
+                      }}
+                    >
+                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                        {title}
+                      </Link>
+                    </h3>
+                    <small>{node.frontmatter.date}</small>
+                  </header>
+                  <section>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                  </section>
+                </article>
+              </Fade>
             )
           })}
         </Container>
