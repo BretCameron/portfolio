@@ -103,7 +103,6 @@ const Bio = () => {
                   height: 450,
                   objectFit: `cover`,
                   // boxShadow: `-8px 8px 0 0 #000000`,
-                  // boxShadow: `-2px 2px 5px 2px #00000033`,
                   overflow: `hidden`
                 }}
               >
@@ -130,7 +129,8 @@ const Bio = () => {
                 <p
                   style={{
                     fontSize: `1.1rem`,
-                    fontWeight: 100
+                    fontWeight: 100,
+                    textShadow: `2px 2px 5px #000000`,
                   }}
                 >
                   I'm a developer and designer based in London, currently on the look out for new opportunities. I specialise in the MERN stack (MongoDB, Express, React, Node).
@@ -145,7 +145,9 @@ const Bio = () => {
                     fontWeight: 100,
                     columnCount: 3,
                     textAlign: `left`,
-                    paddingLeft: `20px`
+                    paddingLeft: `20px`,
+                    textShadow: `2px 2px 5px #000000`,
+
                   }}
                 >
                   <ul>

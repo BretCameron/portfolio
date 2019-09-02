@@ -47,6 +47,7 @@ export default class Contact extends Component {
               // background: `black`,
               color: `white`,
               marginTop: `100px`,
+              boxShadow: `0px -2px 5px #00000055`,
               // paddingBottom: `100px`
             }}>
             <div style={{
@@ -125,7 +126,8 @@ export default class Contact extends Component {
                         width: `100%`,
                         background: `none`,
                         border: `1px solid white`,
-                        color: `white`
+                        color: `white`,
+                        cursor: `pointer`
                       }} />
                     </div>
                   </div>

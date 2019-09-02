@@ -95,27 +95,40 @@ class BlogIndex extends React.Component {
                         }} />
                       </div>
                       <div>
-                        <a target="_blank" rel="noopener noreferrer" href={node.frontmatter.link}>
+                        <div style={{
+                          display: `flex`,
+                          justifyContent: `space-between`,
+                          alignItems: `flex-end`
+                        }}>
                           <div style={{
-                            display: `flex`,
-                            justifyContent: `left`,
-                            alignItems: `center`
+                            display: `inline-block`
                           }}>
                             <h3 style={{
-                              margin: `20px 10px 10px 0`
+                              margin: `20px 10px 10px 0`,
+                              display: `inline-block`
 
                             }}>
                               {node.frontmatter.title}
                             </h3>
                             <h4 style={{
-                              margin: `20px 0 10px 0`,
+                              margin: `20px 0 15px 0`,
                               fontSize: `0.8rem`,
-                              color: `#333`
+                              color: `#333`,
+                              display: `inline-block`
+
                             }}>
                               {node.frontmatter.draft ? '(Draft)' : ''}
                             </h4>
                           </div>
-                        </a>
+                          {node.frontmatter.link ? <a style={{
+                            display: `inline-block`,
+                            margin: `10px 0 8px 0`,
+                          }} target="_blank" rel="noopener noreferrer" href={node.frontmatter.link}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                              <title>Go to Website</title>
+                              <path fill="#0645AD" d="M6 17c2.269-9.881 11-11.667 11-11.667v-3.333l7 6.637-7 6.696v-3.333s-6.17-.171-11 5zm12 .145v2.855h-16v-12h6.598c.768-.787 1.561-1.449 2.339-2h-10.937v16h20v-6.769l-2 1.914z"/></svg>
+                        </a> : ''}
+                        </div>
                         <p>
                           <em><strong>Tech: </strong>{node.frontmatter.tech}</em>
                         </p>
@@ -164,9 +177,9 @@ class BlogIndex extends React.Component {
                         marginBottom: rhythm(1 / 4),
                       }}
                     >
-                      <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+                      <a target="_blank" rel="noopener noreferrer" style={{ boxShadow: `none` }} href={node.frontmatter.link}> 
                         {title}
-                      </Link>
+                      </a>
                     </h3>
                     <small>{node.frontmatter.date}</small>
                   </header>
@@ -209,6 +222,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            link
           }
         }
       }
