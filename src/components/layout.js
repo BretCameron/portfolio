@@ -41,7 +41,6 @@ class Layout extends React.Component {
                   backgroundAttachment: `fixed`,
                   color: `white`,
                   height: `calc(95vh - 60px)`,
-                  minHeight: `600px`,
                   textAlign: `center`,
                   backgroundPosition: `bottom`,
                   imageRendering: `crisp-edges`,
@@ -55,12 +54,16 @@ class Layout extends React.Component {
                 }}>
                   <Fade>
                     <Container>
-                      <div style={{ width: `100%` }}>
+                      <div style={{ 
+                        width: `100%`,
+                        margin: `0, auto`,                 diplay: `flex`,
+                        alignItems: `center`
+                        }}>
                         <h1
                           style={{
                             ...scale(1.5),
                             marginBottom: rhythm(1.5),
-                            marginTop: "220px",
+                            marginTop: "100px",
                             textAlign: `center`
                           }}
                         >
@@ -89,7 +92,7 @@ class Layout extends React.Component {
                       </div>
                     </Container>
                   </Fade>
-                  <Parallax y={[0, 100]} tagOuter="figure">
+                  <Parallax y={[0, 100]}>
                     <Container>
                       <Fade bottom>
                         <Link to="/#about">
@@ -107,10 +110,10 @@ class Layout extends React.Component {
               </BackgroundImage>
               <img src={require('../../content/assets/triangles.svg')} alt="" style={{
                 position: `absolute`,
-                width: `101vw`,
+                width: `102vw`,
                 overflow: `hidden`,
-                right: `0px`,
-                bottom: `0px`,
+                left: `0px`,
+                bottom: `-1px`,
                 pointerEvents: `none`,
                 imageRendering: `crisp-edges`,
                 zIndex: 2

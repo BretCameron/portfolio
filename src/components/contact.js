@@ -86,8 +86,8 @@ export default class Contact extends Component {
                         fontWeight: `100`,
                         background: `#22222255`,
                         color: `white`,
-                        padding: `2px 4px`,
-                        minHeight: `2rem`,
+                        padding: `4px 8px`,
+                        minHeight: `2.5rem`,
                         border: `1px solid #555555`
                       }} id="name" name="name" type="text" />
                     </div>
@@ -99,8 +99,8 @@ export default class Contact extends Component {
                         fontWeight: `100`,
                         background: `#22222255`,
                         color: `white`,
-                        padding: `2px 4px`,
-                        minHeight: `2rem`,
+                        padding: `4px 8px`,
+                        minHeight: `2.5rem`,
                         border: `1px solid #555555`
                       }} id="email" name="email" type="text" />
                     </div>
@@ -114,7 +114,7 @@ export default class Contact extends Component {
                         fontWeight: `100`,
                         background: `#22222255`,
                         color: `white`,
-                        padding: `2px 4px`,
+                        padding: `4px 8px`,
                         minHeight: `8rem`,
                         border: `1px solid #555555`
                       }} id="message" name="message" />
@@ -126,6 +126,7 @@ export default class Contact extends Component {
                         width: `100%`,
                         background: `none`,
                         border: `1px solid white`,
+                                      minHeight: `2.5rem`,
                         color: `white`,
                         cursor: `pointer`
                       }} />

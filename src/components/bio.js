@@ -46,7 +46,7 @@ const Bio = () => {
   const { author } = data.site.siteMetadata
   return (
     <>
-      <Parallax y={[10, 35]} tagOuter="figure">
+      <Parallax y={[10, 40]} tagOuter="figure">
         <BackgroundImage
           Tag="section"
           fluid={data.background.childImageSharp.fluid}
@@ -58,17 +58,18 @@ const Bio = () => {
             backgroundSize: `cover`,
             backgroundPosition: `center`,
             minHeight: `800px`,
-            height: `110vh`,
+            height: `120vh`,
             animationFillMode: `none`,
-            marginBottom: `-800px`,
+            marginBottom: `-600px`,
           }}
         />
       </Parallax>
       <Container>
         <div
+        id="about"
           style={{
             // background: `black`,
-            minHeight: `105vh`,
+            minHeight: `120vh`,
             zIndex: `10`,
             color: `white`
           }}
@@ -83,10 +84,9 @@ const Bio = () => {
             }}
           >
             <h1
-              id="about"
               style={{
                 textAlign: `left`,
-                padding: `40px 0`,
+                padding: `0px 0`,
                 zIndex: `10`,
                 color: `white`,
                 gridColumn: `1 / 3`
