@@ -2,6 +2,7 @@
 title: 13 Tips to Write Faster, Better-Optimized JavaScript
 date: "2019-08-12T22:12:03.284Z"
 description: "Actionable Tips and Tricks to Increase the Speed of Your Code"
+link: https://medium.com/@bretcameron/how-to-publish-your-first-npm-package-b224296fc57b?source=friends_link&sk=f98952b9c7075e398e9bbca2799d303f
 ---
 
 <!-- Actionable Tips and Tricks to Increase the Speed of Your Code -->

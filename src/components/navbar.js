@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import { rhythm } from "../utils/typography"
 
 const liStyle = {
@@ -14,20 +14,57 @@ const linkStyle = {
   color: `#FEFEFE`
 }
 
-export default class header extends Component {
+export default class NavBar extends Component {
+
+
   render() {
+    // const { location, title, children, description } = this.props
+    // const rootPath = `${__PATH_PREFIX__}/`
+    const { home } = this.props;
+    let logo
+
+    console.log(this.props)
+    if (home) {
+      logo = (
+        <div style={liStyle} />
+      )
+    } else {
+      logo = (
+        <h3
+          style={liStyle}
+        >
+          <Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+              textAlign: `left`
+            }}
+            to={`/`}
+          >
+            BretCameron
+          </Link>
+        </h3>
+      )
+    }
     return (
       <div
         style={{
           background: `#111111`,
-          color: `#FEFEFE`
+          color: `#FEFEFE`,
+          // position: `fixed`,
+          boxShadow: `0 2px 5px #000000aa`,
+          width: `100%`,
+          top: 0,
+          zIndex: 10,
+          // marginBottom: '60px'
         }}
       >
         <div
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            maxWidth: rhythm(30),
+            // maxWidth: rhythm(30),
             padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
           }}
         >
@@ -37,7 +74,7 @@ export default class header extends Component {
               justifyContent: `space-between`
             }}
           >
-            <div style={liStyle} />
+            {logo}
             <div>
               <ul style={{
                 margin: 0,
@@ -78,3 +115,4 @@ export default class header extends Component {
     )
   }
 }
+

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { rhythm, scale } from "../utils/typography"
+import { rhythm } from "../utils/typography"
 
 export default class Container extends Component {
   render() {

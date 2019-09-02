@@ -2,6 +2,7 @@
 title: A Guide to JavaScript Promises
 date: "2019-08-07T22:12:03.284Z"
 description: "A whistle-stop tour of all things asynchronous in JavaScript: from callback hell to async/await"
+link: https://medium.com/@bretcameron/how-to-publish-your-first-npm-package-b224296fc57b?source=friends_link&sk=f98952b9c7075e398e9bbca2799d303f
 ---
 
 ![Image Credit: [Marcos Mayer / Unsplash](https://unsplash.com/photos/8_NI1WTqCGY)](https://cdn-images-1.medium.com/max/10368/1*e-1gfnNch17BxEOcwQuaKQ.jpeg)

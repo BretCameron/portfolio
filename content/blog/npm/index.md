@@ -2,6 +2,7 @@
 title: How to Publish Your First npm Package
 date: "2019-08-22T22:12:03.284Z"
 description: "Everything You Need to Know to Create a Useful, Accessible npm Package"
+link: https://medium.com/@bretcameron/how-to-publish-your-first-npm-package-b224296fc57b?source=friends_link&sk=f98952b9c7075e398e9bbca2799d303f
 ---
 
 <!-- ## Everything You Need to Know to Create a Useful, Accessible npm Package -->

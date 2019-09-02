@@ -44,7 +44,8 @@ class Layout extends React.Component {
                   minHeight: `600px`,
                   textAlign: `center`,
                   backgroundPosition: `bottom`,
-                  imageRendering: `crisp-edges`
+                  imageRendering: `crisp-edges`,
+                  zIndex: 2
                 }}
               >
                 <div style={{
@@ -97,7 +98,7 @@ class Layout extends React.Component {
                             transform: `rotate(90deg)`,
                             cursor: `pointer`,
                             marginLeft: `0px`
-                          }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
+                          }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
                         </Link>
                       </Fade>
                     </Container>
@@ -111,7 +112,8 @@ class Layout extends React.Component {
                 right: `0px`,
                 bottom: `0px`,
                 pointerEvents: `none`,
-                imageRendering: `crisp-edges`
+                imageRendering: `crisp-edges`,
+                zIndex: 2
               }} />
             </>
           )}
@@ -119,39 +121,26 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <Container>
-          <h3
-            style={{
-              fontFamily: `Montserrat, sans-serif`,
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {title}
-            </Link>
-          </h3>
-        </Container>
+        <div />
       )
     }
     return (
       <>
         <ParallaxProvider>
-          <NavBar />
+          <NavBar home={location.pathname === rootPath} />
           <header>{header}</header>
           <main>{children}</main>
-          <Container>
-            <footer>
-              <hr width="100" />
-              © {new Date().getFullYear()}
-            </footer>
-          </Container>
+          <div style={{
+            background: `black`,
+            color: `white`
+          }}>
+            <Container>
+              <footer style={{ margin: `0 auto`, textAlign: `center` }}>
+                <hr width="100" style={{ margin: `20px auto`, borderTop: `1px solid white` }} />
+                © {new Date().getFullYear()}
+              </footer>
+            </Container>
+          </div>
         </ParallaxProvider>
       </>
     )

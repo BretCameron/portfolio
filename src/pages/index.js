@@ -4,6 +4,7 @@ import Image from "gatsby-image"
 import "./style.css"
 
 import Bio from "../components/bio"
+import Contact from "../components/contact"
 import Container from "../components/container"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -23,9 +24,9 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle} description={siteDesc} >
         <SEO title="All posts" />
-        <Container>
-          <Bio />
-        </Container>
+        {/* <Container> */}
+        <Bio />
+        {/* </Container> */}
         {/* <Image
           fluid={data.background.childImageSharp.fluid}
           alt=""
@@ -64,7 +65,7 @@ class BlogIndex extends React.Component {
           >
             {projects.map(({ node }) => {
               return (
-                <Zoom>
+                <Zoom key={node.fields.slug}>
                   <div
                     key={node.fields.slug}
                     style={{
@@ -94,7 +95,7 @@ class BlogIndex extends React.Component {
                         }} />
                       </div>
                       <div>
-                        <a target="_blank" href={node.frontmatter.link}>
+                        <a target="_blank" rel="noopener noreferrer" href={node.frontmatter.link}>
                           <div style={{
                             display: `flex`,
                             justifyContent: `left`,
@@ -181,6 +182,7 @@ class BlogIndex extends React.Component {
             )
           })}
         </Container>
+        <Contact />
       </Layout>
     )
   }
