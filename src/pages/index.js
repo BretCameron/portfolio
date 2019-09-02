@@ -23,7 +23,7 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle} description={siteDesc} >
-        <SEO title="All posts" />
+        <SEO title="Portfolio and Blog" />
         {/* <Container> */}
         <Bio />
         {/* </Container> */}

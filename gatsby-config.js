@@ -3,7 +3,7 @@ module.exports = {
     title: `Bret Cameron`,
     author: `Bret Cameron`,
     description: `Full Stack Developer`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    siteUrl: `https://bretcameron.com/`,
     social: {
       twitter: `bret_cameron`,
     },
@@ -64,13 +64,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Bret Cameron Portfolio`,
+        short_name: `Bret Cameron`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#111111`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/bc-icon.svg`,
       },
     },
     `gatsby-plugin-offline`,
