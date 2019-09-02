@@ -25,10 +25,10 @@ const Bio = () => {
           }
         }
       }
-      background: file(absolutePath: { regex: "/dark.jpg/" }) {
+      background: file(absolutePath: { regex: "/dark3.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 2160, traceSVG: {color: "#111111"}) {
-                   ...GatsbyImageSharpFluid_withWebp_tracedSVG 
+          fluid(maxWidth: 4320) {
+                   ...GatsbyImageSharpFluid 
           }
         }
       }
@@ -55,7 +55,8 @@ const Bio = () => {
             zIndex: `0`,
             background: `linear-gradient(45deg, #222222, black)`,
             width: `100%`,
-            backgroundSize: `fill`,
+            backgroundSize: `cover`,
+            backgroundPosition: `center`,
             minHeight: `800px`,
             height: `110vh`,
             animationFillMode: `none`,
@@ -102,7 +103,7 @@ const Bio = () => {
                   height: 450,
                   objectFit: `cover`,
                   // boxShadow: `-8px 8px 0 0 #000000`,
-                  boxShadow: `-2px 2px 5px 2px #00000033`,
+                  // boxShadow: `-2px 2px 5px 2px #00000033`,
                   overflow: `hidden`
                 }}
               >
