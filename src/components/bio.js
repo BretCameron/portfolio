@@ -66,7 +66,7 @@ const Bio = () => {
       </Parallax>
       <Container>
         <div
-        id="about"
+          id="about"
           style={{
             // background: `black`,
             minHeight: `120vh`,
@@ -75,27 +75,19 @@ const Bio = () => {
           }}
         >
           <div
+            className="bio-grid"
             style={{
-              marginBottom: rhythm(2.5),
-              textAlign: `center`,
-              display: `grid`,
-              gridTemplateColumns: `1fr 1.3fr`,
-              gridColumnGap: 40
+              marginBottom: `rhythm(2.5)`
             }}
           >
             <h1
-              style={{
-                textAlign: `left`,
-                padding: `0px 0`,
-                zIndex: `10`,
-                color: `white`,
-                gridColumn: `1 / 3`
-              }}
+              className="about-me"
             >
               About Me
             </h1>
             <Fade>
               <div
+                className="bio-img"
                 style={{
                   marginBottom: `10px`,
                   minWidth: 50,

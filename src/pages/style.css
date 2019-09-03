@@ -5,3 +5,67 @@ html {
 a {
   box-shadow: none;
 }
+
+.title {
+  margin-top: 100px;
+  text-align: center;
+  /* height: 77px; */
+
+  font-size: 3.5rem;
+  /* overflow: hidden; */
+}
+
+@media only screen and (max-width: 537px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+  }
+}
+
+.bio-grid {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-column-gap: 40px;
+}
+
+.bio-img {
+  display: block;
+}
+
+.about-me {
+  text-align: left;
+  padding: 0px 0;
+  z-index: 10;
+  color: white;
+  grid-column: 1 / 3;
+}
+
+@media only screen and (max-width: 700px) {
+  .bio-grid {
+    /* display: block; */
+    grid-template-columns: 1fr;
+    grid-column-gap: 40px;
+  }
+
+  .bio-img {
+    display: none;
+  }
+
+  .about-me {
+    text-align: left;
+    padding: 0px 0;
+    z-index: 10;
+    color: white;
+    margin-bottom: -100px;
+  }
+}

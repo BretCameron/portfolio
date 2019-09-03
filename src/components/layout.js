@@ -54,17 +54,15 @@ class Layout extends React.Component {
                 }}>
                   <Fade>
                     <Container>
-                      <div style={{ 
+                      <div style={{
                         width: `100%`,
-                        margin: `0, auto`,                 diplay: `flex`,
+                        margin: `0, auto`, diplay: `flex`,
                         alignItems: `center`
-                        }}>
+                      }}>
                         <h1
+                          className="title"
                           style={{
-                            ...scale(1.5),
                             marginBottom: rhythm(1.5),
-                            marginTop: "100px",
-                            textAlign: `center`
                           }}
                         >
                           <Link
@@ -79,6 +77,7 @@ class Layout extends React.Component {
                           </Link>
                         </h1>
                         <h2
+                          className="description"
                           style={{
                             marginTop: 0,
                             marginBottom: 150,
@@ -108,16 +107,18 @@ class Layout extends React.Component {
                   </Parallax>
                 </div>
               </BackgroundImage>
-              <img src={require('../../content/assets/triangles.svg')} alt="" style={{
-                position: `absolute`,
-                width: `102vw`,
-                overflow: `hidden`,
-                left: `0px`,
-                bottom: `-1px`,
-                pointerEvents: `none`,
-                imageRendering: `crisp-edges`,
-                zIndex: 2
-              }} />
+              <img
+                className="hero-cutout"
+                src={require('../../content/assets/triangles.svg')} alt="" style={{
+                  position: `absolute`,
+                  width: `102vw`,
+                  overflow: `hidden`,
+                  left: `0px`,
+                  bottom: `0px`,
+                  pointerEvents: `none`,
+                  imageRendering: `crisp-edges`,
+                  zIndex: 2
+                }} />
             </>
           )}
         />
