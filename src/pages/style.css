@@ -108,7 +108,8 @@ a {
 
   .bio-img {
     grid-row: 5;
-    max-width: 250px;
+    width: 50vw;
+    min-width: 250px;
   }
 
   .about-me {
