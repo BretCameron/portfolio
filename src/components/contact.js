@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import Container from './container'
-import { StaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import React, { Component } from 'react';
+import Container from './container';
+import { StaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 import Fade from 'react-reveal/Fade';
 import isEmail from 'validator/lib/isEmail';
 
@@ -10,19 +10,18 @@ export default class Contact extends Component {
     name: '',
     email: '',
     message: ''
-  }
+  };
 
   onChange = (e) => {
     this.setState({ [e.currentTarget.id]: e.currentTarget.value })
-  }
+  };
 
   onSubmit = (e) => {
     const { name, email, message } = this.state;
     if (!name || !email || !message || !isEmail(email)) {
       e.preventDefault();
     }
-  }
-
+  };
 
   render() {
     return (
@@ -44,18 +43,15 @@ export default class Contact extends Component {
             fluid={data.background.childImageSharp.fluid}
             backgroundColor={`#FFFFFF`}
             style={{
-              // background: `black`,
               color: `white`,
               marginTop: `100px`,
               boxShadow: `0px -2px 5px #00000055`,
-              // paddingBottom: `100px`
             }}>
             <div style={{
               background: `linear-gradient(#00000055, #000000ff)`,
               width: `100%`,
               height: `100%`,
               paddingBottom: `50px`,
-              // marginBottom: `100px`
             }}>
               <Container>
                 <h1
@@ -73,11 +69,7 @@ export default class Contact extends Component {
                 <form name="contact" id="contact-form" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact" />
-                  <div style={{
-                    display: `grid`,
-                    gridTemplateColumns: `1fr 1fr`,
-                    gridGap: `20px`
-                  }}>
+                  <div className="contact-grid">
                     <div>
                       <label htmlFor="name">Name: </label>
                       <br />
@@ -104,9 +96,7 @@ export default class Contact extends Component {
                         border: `1px solid #555555`
                       }} id="email" name="email" type="text" />
                     </div>
-                    <div style={{
-                      gridColumn: `1 /3`
-                    }}>
+                    <div className="input-full-width">
                       <label htmlFor="message">Message: </label>
                       <br />
                       <textarea onChange={this.onChange} style={{
@@ -119,14 +109,12 @@ export default class Contact extends Component {
                         border: `1px solid #555555`
                       }} id="message" name="message" />
                     </div>
-                    <div style={{
-                      gridColumn: `1 /3`
-                    }}>
+                    <div className="input-full-width">
                       <input id="submit" type="submit" value="Submit" style={{
                         width: `100%`,
                         background: `none`,
                         border: `1px solid white`,
-                                      minHeight: `2.5rem`,
+                        minHeight: `2.5rem`,
                         color: `white`,
                         cursor: `pointer`
                       }} />
@@ -136,8 +124,7 @@ export default class Contact extends Component {
               </Container>
             </div>
           </BackgroundImage>
-
         )} />
     )
   }
-}
+};

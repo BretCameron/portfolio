@@ -1,45 +1,32 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
-import "./style.css"
-
-import Bio from "../components/bio"
-import Contact from "../components/contact"
-import Container from "../components/container"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
-
-import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
+import Image from "gatsby-image";
+import { Link, graphql } from "gatsby";
+import React, { Component } from "react";
+import Zoom from 'react-reveal/Zoom';
 
-class BlogIndex extends React.Component {
+import "./style.css";
+
+import Bio from "../components/bio";
+import Contact from "../components/contact";
+import Container from "../components/container";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import { rhythm } from "../utils/typography";
+
+
+
+class BlogIndex extends Component {
   render() {
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const siteDesc = data.site.siteMetadata.description
-    const posts = data.posts.edges
-    const projects = data.projects.edges
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const siteDesc = data.site.siteMetadata.description;
+    const posts = data.posts.edges;
+    const projects = data.projects.edges;
 
     return (
-      <Layout location={this.props.location} title={siteTitle} description={siteDesc} >
+      <Layout location={this.props.location} title={siteTitle} description={siteDesc} ref={this.aboutRef} >
         <SEO title="Portfolio and Blog" />
-        {/* <Container> */}
         <Bio />
-        {/* </Container> */}
-        {/* <Image
-          fluid={data.background.childImageSharp.fluid}
-          alt=""
-          style={{
-            marginBottom: `10px`,
-            minWidth: `100%`,
-            border: `1px solid black`,
-            objectFit: `cover`,
-          }}
-          imgStyle={{
-            borderRadius: `0%`,
-          }}
-        /> */}
         <Container>
           <div
             style={{
@@ -57,29 +44,19 @@ class BlogIndex extends React.Component {
           </h1>
           </div>
           <div
-            style={{
-              display: `grid`,
-              gridTemplateColumns: `1fr 1fr`,
-              gridGap: `0 30px`
-            }}
+            className="projects-grid"
           >
             {projects.map(({ node }) => {
               return (
                 <Zoom key={node.fields.slug}>
                   <div
                     key={node.fields.slug}
+                  >{node.frontmatter.featuredImage ? <Image
+                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                     style={{
-                      // border: `1px solid #000000BB`,
-                      // padding: 20,
-                      // boxShadow: `-8px 8px 0 0 #000000BB`
+                      boxShadow: `-2px 2px 5px 2px #00000033`
                     }}
-                  >
-                    {node.frontmatter.featuredImage ? <Image
-                      fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                      style={{
-                        boxShadow: `-2px 2px 5px 2px #00000033`
-                      }}
-                    /> : ''}
+                  /> : ''}
                     <div
                       style={{
                         padding: 10,
@@ -169,7 +146,7 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Fade>
+              <Fade key={node.fields.slug}>
                 <article key={node.fields.slug}>
                   <header>
                     <h3
@@ -199,9 +176,9 @@ class BlogIndex extends React.Component {
       </Layout>
     )
   }
-}
+};
 
-export default BlogIndex
+export default BlogIndex;
 
 export const pageQuery = graphql`
   query {
@@ -260,4 +237,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

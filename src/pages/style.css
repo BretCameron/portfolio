@@ -15,19 +15,52 @@ a {
   /* overflow: hidden; */
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tech-list {
+  font-size: 1rem;
+  font-weight: 100;
+  column-count: 3;
+  text-align: left;
+  padding-left: 20px;
+  text-shadow: 2px 2px 5px #000000;
+  margin-bottom: 50px;
+}
+
 @media only screen and (max-width: 537px) {
   .title {
     font-size: 3rem;
+  }
+
+  .navbar {
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+
+  .tech-list {
+    column-count: 2;
+  }
+
+  .tech-list > ul {
+    margin-left: -10px;
   }
 }
 
 @media only screen and (max-width: 425px) {
   .title {
-    font-size: 2.2rem;
+    font-size: 2.1rem;
   }
 
   .description {
     font-size: 1.5rem;
+  }
+
+  .navbar {
+    font-size: 0.9rem;
+    justify-content: center;
   }
 }
 
@@ -50,6 +83,22 @@ a {
   grid-column: 1 / 3;
 }
 
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.input-full-width {
+  grid-column: 1/3;
+}
+
 @media only screen and (max-width: 700px) {
   .bio-grid {
     /* display: block; */
@@ -58,7 +107,8 @@ a {
   }
 
   .bio-img {
-    display: none;
+    grid-row: 5;
+    max-width: 250px;
   }
 
   .about-me {
@@ -67,5 +117,19 @@ a {
     z-index: 10;
     color: white;
     margin-bottom: -100px;
+  }
+
+  .projects-grid {
+    display: block;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .input-full-width {
+    grid-column: 1;
   }
 }

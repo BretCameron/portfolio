@@ -5,7 +5,7 @@ import { rhythm } from "../utils/typography"
 const liStyle = {
   display: `inline-block`,
   margin: `0 5px`,
-  padding: `2px 5px`,
+  padding: `2px 2px`,
   cursor: `pointer`,
 }
 
@@ -23,7 +23,6 @@ export default class NavBar extends Component {
     const { home } = this.props;
     let logo
 
-    console.log(this.props)
     if (home) {
       logo = (
         <div style={liStyle} />
@@ -52,27 +51,21 @@ export default class NavBar extends Component {
         style={{
           background: `#111111`,
           color: `#FEFEFE`,
-          // position: `fixed`,
           boxShadow: `0 2px 5px #000000aa`,
           width: `100%`,
           top: 0,
-          zIndex: 10,
-          // marginBottom: '60px'
+          zIndex: 10
         }}
       >
         <div
           style={{
             marginLeft: `auto`,
             marginRight: `auto`,
-            // maxWidth: rhythm(30),
             padding: `${rhythm(0.5)} ${rhythm(3 / 4)}`,
           }}
         >
           <nav
-            style={{
-              display: `flex`,
-              justifyContent: `space-between`
-            }}
+            className="navbar"
           >
             {logo}
             <div>

@@ -1,19 +1,26 @@
-import React from "react"
-import { Link, StaticQuery, graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
-
+import BackgroundImage from "gatsby-background-image";
 import Fade from 'react-reveal/Fade';
-import { Parallax } from 'react-scroll-parallax'
-import Container from "../components/container"
-import NavBar from "../components/navbar"
-import { rhythm, scale } from "../utils/typography"
-import { ParallaxProvider } from 'react-scroll-parallax'
+import { Link, StaticQuery, graphql } from "gatsby";
+import { Parallax } from 'react-scroll-parallax';
+import React, { Component } from "react";
 
-class Layout extends React.Component {
+import Container from "../components/container";
+import { ParallaxProvider } from 'react-scroll-parallax';
+import NavBar from "../components/navbar";
+import { rhythm, scale } from "../utils/typography";
+
+class Layout extends Component {
+  goToBio = () => {
+    if (this.props.location.hash === "#about") {
+      window.scrollTo(0, document.querySelector('#about').getBoundingClientRect().y
+      );
+    };
+  };
+
   render() {
-    const { location, title, children, description } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
-    let header
+    const { location, title, children, description } = this.props;
+    const rootPath = `${__PATH_PREFIX__}/`;
+    let header;
 
     if (location.pathname === rootPath) {
       header = (
@@ -31,26 +38,23 @@ class Layout extends React.Component {
           `}
           render={data => (
             <>
-              {console.log(data)}
               <BackgroundImage
                 Tag="section"
                 fluid={data.background.childImageSharp.fluid}
-                backgroundColor={`#FFFFFF`}
+                backgroundColor={`#FFF`}
                 style={{
-                  // background: `#FFF`,
                   backgroundAttachment: `fixed`,
                   color: `white`,
                   height: `calc(95vh - 60px)`,
                   textAlign: `center`,
                   backgroundPosition: `bottom`,
                   imageRendering: `crisp-edges`,
-                  zIndex: 2
+                  zIndex: 2,
+                  marginBottom: `-10px`
                 }}
               >
                 <div style={{
-                  // background: `#00000055`,
                   height: `calc(95vh - 60px)`,
-                  minHeight: `600px`,
                 }}>
                   <Fade>
                     <Container>
@@ -94,7 +98,7 @@ class Layout extends React.Component {
                   <Parallax y={[0, 100]}>
                     <Container>
                       <Fade bottom>
-                        <Link to="/#about">
+                        <Link to="/#about" onClick={this.goToBio}>
                           <svg style={{
                             boxShadow: `none`,
                             transform: `rotate(90deg)`,
@@ -111,7 +115,7 @@ class Layout extends React.Component {
                 className="hero-cutout"
                 src={require('../../content/assets/triangles.svg')} alt="" style={{
                   position: `absolute`,
-                  width: `102vw`,
+                  width: `100%`,
                   overflow: `hidden`,
                   left: `0px`,
                   bottom: `0px`,
@@ -125,7 +129,7 @@ class Layout extends React.Component {
       )
     } else {
       header = (
-        <div />
+        <></>
       )
     }
     return (
@@ -133,25 +137,25 @@ class Layout extends React.Component {
         <ParallaxProvider>
           <NavBar home={location.pathname === rootPath} />
           <header>{header}</header>
-          <main>{children}</main>
-          <div style={{
-            background: `black`,
-            color: `white`
+          <main style={{ marginTop: `10px` }}>{children}</main>
+          <footer style={{
+            background: `#000`,
+            color: `#FFF`
           }}>
             <Container>
-              <footer style={{ margin: `0 auto`, textAlign: `center` }}>
+              <div style={{ margin: `0 auto`, textAlign: `center` }}>
                 <hr width="100" style={{ margin: `20px auto`, borderTop: `1px solid white` }} />
                 © {new Date().getFullYear()}
-              </footer>
+              </div>
             </Container>
-          </div>
+          </footer>
         </ParallaxProvider>
       </>
     )
   }
-}
+};
 
-export default Layout
+export default Layout;
 
 export const heroQuery = graphql`
   query {
@@ -163,4 +167,4 @@ export const heroQuery = graphql`
       }
     }
   }
-`
+`;
