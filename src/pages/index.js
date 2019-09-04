@@ -51,12 +51,13 @@ class BlogIndex extends Component {
                 <Zoom key={node.fields.slug}>
                   <div
                     key={node.fields.slug}
-                  >{node.frontmatter.featuredImage ? <Image
-                    fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                    style={{
-                      boxShadow: `-2px 2px 5px 2px #00000033`
-                    }}
-                  /> : ''}
+                  >{node.frontmatter.featuredImage ?
+                    <Image
+                      fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
+                      style={{
+                        boxShadow: `-2px 2px 5px 2px #00000033`
+                      }}
+                    /> : ''}
                     <div
                       style={{
                         padding: 10,
@@ -220,8 +221,8 @@ export const pageQuery = graphql`
             draft
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 1080) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 640) {
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -232,7 +233,7 @@ export const pageQuery = graphql`
     background: file(absolutePath: { regex: "/background.jpg/" }){
       childImageSharp {
         fluid(maxWidth: 527) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

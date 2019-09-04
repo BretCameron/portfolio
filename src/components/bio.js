@@ -13,15 +13,15 @@ const Bio = (props) => {
     query BioQuery {
       avatar: file(absolutePath: { regex: "/profile-portrait.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 527) {
-            ...GatsbyImageSharpFluid
+          fluid(maxWidth: 840) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       background: file(absolutePath: { regex: "/dark3.jpg/" }) {
         childImageSharp {
-          fluid(maxWidth: 4320) {
-                   ...GatsbyImageSharpFluid 
+          fluid(maxWidth: 2160) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

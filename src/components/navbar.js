@@ -70,36 +70,36 @@ export default class NavBar extends Component {
             {logo}
             <div>
               <ul style={{
-                margin: 0,
+                margin: `0px`
               }}>
-                <Link to='/#about' style={linkStyle}>
-                  <li
-                    style={liStyle}
-                  >
+                <li
+                  style={liStyle}
+                >
+                  <Link to='/#about' aria-label="Find out more about me" style={linkStyle}>
                     About
-                  </li>
-                </Link>
-                <Link to='/#projects' style={linkStyle}>
-                  <li
-                    style={liStyle}
-                  >
+                  </Link>
+                </li>
+                <li
+                  style={liStyle}
+                >
+                  <Link to='/#projects' aria-label="See my latest projects" style={linkStyle}>
                     Projects
-                  </li>
-                </Link>
-                <Link to='/#blog' style={linkStyle}>
-                  <li
-                    style={liStyle}
-                  >
+                  </Link>
+                </li>
+                <li
+                  style={liStyle}
+                >
+                  <Link to='/#blog' aria-label="Check out my latest blog posts" style={linkStyle}>
                     Blog
-                  </li>
-                </Link>
-                <Link to='/#contact' style={linkStyle}>
-                  <li
-                    style={liStyle}
-                  >
+                  </Link>
+                </li>
+                <li
+                  style={liStyle}
+                >
+                  <Link to='/#contact' aria-label="Fill in my contact form" style={linkStyle}>
                     Contact
-                  </li>
-                </Link>
+                  </Link>
+                </li>
               </ul>
             </div>
           </nav>

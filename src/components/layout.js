@@ -98,7 +98,7 @@ class Layout extends Component {
                   <Parallax y={[0, 100]}>
                     <Container>
                       <Fade bottom>
-                        <Link to="/#about" onClick={this.goToBio}>
+                        <Link to="/#about" aria-label="Find out more about me" onClick={this.goToBio}>
                           <svg style={{
                             boxShadow: `none`,
                             transform: `rotate(90deg)`,
