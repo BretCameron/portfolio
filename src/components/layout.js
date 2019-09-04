@@ -50,7 +50,7 @@ class Layout extends Component {
                   backgroundPosition: `bottom`,
                   imageRendering: `crisp-edges`,
                   zIndex: 2,
-                  marginBottom: `-10px`
+                  marginBottom: `-50px`
                 }}
               >
                 <div style={{
@@ -111,18 +111,9 @@ class Layout extends Component {
                   </Parallax>
                 </div>
               </BackgroundImage>
-              <img
+              <div
                 className="hero-cutout"
-                src={require('../../content/assets/triangles.svg')} alt="" style={{
-                  position: `absolute`,
-                  width: `100%`,
-                  overflow: `hidden`,
-                  left: `0px`,
-                  bottom: `0px`,
-                  pointerEvents: `none`,
-                  imageRendering: `crisp-edges`,
-                  zIndex: 2
-                }} />
+              />
             </>
           )}
         />
@@ -137,7 +128,7 @@ class Layout extends Component {
         <ParallaxProvider>
           <NavBar home={location.pathname === rootPath} />
           <header>{header}</header>
-          <main style={{ marginTop: `10px` }}>{children}</main>
+          <main style={{ marginTop: `0px` }}>{children}</main>
           <footer style={{
             background: `#000`,
             color: `#FFF`

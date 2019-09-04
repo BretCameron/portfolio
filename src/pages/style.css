@@ -20,6 +20,21 @@ a {
   justify-content: space-between;
 }
 
+.hero-cutout {
+  background: transparent;
+  background-image: url("../../content/assets/triangles2.svg");
+  background-size: cover;
+  background-position: bottom center;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: calc(95vh + 60px);
+  pointer-events: none;
+  image-rendering: crisp-edges;
+  z-index: 2;
+  /* margin-bottom: -10px; */
+}
+
 .tech-list {
   font-size: 1rem;
   font-weight: 100;
