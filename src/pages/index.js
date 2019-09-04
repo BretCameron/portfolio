@@ -30,7 +30,7 @@ class BlogIndex extends Component {
         <Container>
           <div
             style={{
-              marginTop: 50,
+              marginTop: `0px`,
             }}
           >
             <h1

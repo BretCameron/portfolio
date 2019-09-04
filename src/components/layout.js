@@ -43,7 +43,7 @@ class Layout extends Component {
                 fluid={data.background.childImageSharp.fluid}
                 backgroundColor={`#FFF`}
                 style={{
-                  backgroundAttachment: `fixed`,
+                  // backgroundAttachment: `fixed`,
                   color: `white`,
                   height: `calc(95vh - 60px)`,
                   textAlign: `center`,
@@ -103,7 +103,7 @@ class Layout extends Component {
                             boxShadow: `none`,
                             transform: `rotate(90deg)`,
                             cursor: `pointer`,
-                            marginLeft: `0px`
+                            marginLeft: `15px`
                           }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
                         </Link>
                       </Fade>
@@ -111,9 +111,9 @@ class Layout extends Component {
                   </Parallax>
                 </div>
               </BackgroundImage>
-              <div
+              {/* <div
                 className="hero-cutout"
-              />
+              /> */}
             </>
           )}
         />
