@@ -103,7 +103,7 @@ class Layout extends Component {
                             boxShadow: `none`,
                             transform: `rotate(90deg)`,
                             cursor: `pointer`,
-                            marginLeft: `15px`
+                            marginLeft: `-1px`
                           }} viewBox="0 0 24 24" width="40" height="40" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path fill="white" d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" /></svg>
                         </Link>
                       </Fade>
@@ -150,12 +150,12 @@ export default Layout;
 
 export const heroQuery = graphql`
   query {
-    background: file(absolutePath: { regex: "/background2.jpg/" }) {
-      childImageSharp {
-        fluid(maxWidth: 527) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
+                      background: file(absolutePath: {regex: "/background2.jpg/" }) {
+                      childImageSharp {
+                    fluid(maxWidth: 527) {
+                      ...GatsbyImageSharpFluid
+                    }
+                    }
+                  }
+                }
 `;

@@ -70,7 +70,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#111111`,
         display: `minimal-ui`,
-        icon: `content/assets/bc-icon.svg`,
+        icon: `content/assets/bc-icon3.svg`,
       },
     },
     `gatsby-plugin-offline`,

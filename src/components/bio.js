@@ -39,7 +39,7 @@ const Bio = (props) => {
   const { author } = data.site.siteMetadata
   return (
     <>
-      <Parallax y={[10, 40]} tagOuter="figure">
+      <Parallax y={[25, 40]} tagOuter="figure">
         <BackgroundImage
           Tag="section"
           fluid={data.background.childImageSharp.fluid}
