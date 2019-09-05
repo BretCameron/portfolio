@@ -21,7 +21,7 @@ const Bio = (props) => {
       background: file(absolutePath: { regex: "/dark3.jpg/" }) {
         childImageSharp {
           fluid(maxWidth: 2160) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
